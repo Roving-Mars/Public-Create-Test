@@ -1,0 +1,32 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    # 1. 将运行平台改为 Windows
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # 2. 在 Windows 环境下编译出 .exe 文件
+      - name: Compile
+        run: |
+          mkdir build
+          gcc hello.c -o build/my_program.exe
+
+      # 3. 运行编译好的 Windows 程序
+      - name: Run Program
+        run: .\build\my_program.exe
+
+      # 4. 上传 Windows 的 .exe 可执行文件
+      - name: Upload Executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-c-program-windows
+          path: build/my_program.exe
