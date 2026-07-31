@@ -1,5 +1,5 @@
 # Public_Create_Test
-测试初始创建github公开库<br/>测试创建CI/CD
+测试初始创建github公开库<br/>测试创建workflows：主要实现功能是将仓库的hello.c在云端编译生成可执行文件，我们可以下载可执行文件直接在windows环境下直接运行。
 
 <!-- 这是一级标题 -->
 # 学习Github
