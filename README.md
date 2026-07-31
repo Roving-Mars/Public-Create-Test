@@ -1,6 +1,5 @@
 # Public_Create_Test
-测试初始创建github公开库
-测试创建CI/CD
+测试初始创建github公开库  测试创建CI/CD
 
 <!-- 这是一级标题 -->
 # 学习Github
