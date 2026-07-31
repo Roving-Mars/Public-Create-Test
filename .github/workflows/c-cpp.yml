@@ -1,0 +1,31 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # 编译 main.c 文件
+      - name: Compile
+        run: |
+          mkdir -p build
+          gcc main.c -o build/my_program
+
+      # 运行编译出的程序
+      - name: Run Program
+        run: ./build/my_program
+
+      # 上传编译好的文件，方便在页面下载
+      - name: Upload Executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-c-program
+          path: build/my_program
