@@ -17,7 +17,7 @@ jobs:
       - name: Compile
         run: |
           mkdir -p build
-          gcc main.c -o build/my_program
+          gcc hello.c -o build/my_program
 
       # 运行编译出的程序
       - name: Run Program
